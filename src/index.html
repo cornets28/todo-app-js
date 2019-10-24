@@ -21,25 +21,25 @@
       <div class="container">
         <aside class="container__left">
 
-          <div class="project__form hide__todo__form">
-            <div class="form__close"><i class=" fas fa-window-close"></i></div>
+          <div id="project__form" class="project__form toggle__form">
+            <div id="close__project__form" class="form__close"><i class=" fas fa-window-close"></i></div>
             <div class="form__fields">
               <div class="form__group">
-                <input type="text" id="name" class="form__field" placeholder="Project name">
-                <label for="name" class="form__label">Project name</label>
+                <input type="text" id="project__name" class="form__field" placeholder="Project name" required>
+                <label for="project__name" class="form__label">Project name</label>
               </div>
             </div>
 
-            <button class="project__submit">Submit</button>
+            <button id="submit__project__btn" class="project__submit">Submit</button>
           </div>
 
           <div class="todos__header">
             <h2 id="selected__project">Projects</h2>
-            <div class="add__todo"><i class="fas fa-plus-square project__add__icon"></i></div>
+            <div id="add__project__btn" class="add__todo"><i class="fas fa-plus-square project__add__icon"></i></div>
           </div>
 
-          <ul id="projects">
-            <li id="project-1" class="project__item project__item--selected">
+          <ul id="project__list">
+            <!-- <li id="project-1" class="project__item project__item--selected">
               <i class="fas fa-home"></i>
               <p>Inbox</p>
             </li>
@@ -54,11 +54,11 @@
             <li id="project-4" class="project__item">
               <i class="fas fa-fill-drip"></i>
               <p>Completed</p>
-            </li>
+            </li> -->
           </ul>
         </aside>
         <aside class="container__right">
-          <div class="todo__form hide__todo__form">
+          <div class="todo__form toggle__form">
             <div class="form__close"><i class=" fas fa-window-close"></i></div>
             <div class="form__fields">
               <div class="form__group">

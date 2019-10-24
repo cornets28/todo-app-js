@@ -68,7 +68,7 @@ body {
   padding-left: 3rem;
 }
 
-#projects {
+#project__list {
   list-style: none;
   padding-left: 3rem;
   margin-top: 2rem;
@@ -81,6 +81,10 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: #8f8f8f
+}
+
+.project__item:hover {
+  color: rgb(55, 77, 141);
 }
 
 .project__item--selected {
@@ -215,14 +219,16 @@ body {
   flex-direction: column;
   position: absolute;
   height: 29rem;
-  top: 5px;
-  left: 13.5rem;
+  top: 6rem;
+  left: 14rem;
   width: 20rem;
   height: 14rem;
   background-color: white;
   z-index: 100;
   border-radius: 10px;
   border: 1px solid #d2d2d2;
+  display: default;
+  opacity: 1;
 }
 
 .todo__form {
@@ -237,16 +243,13 @@ body {
   z-index: 100;
   border-radius: 10px;
   border: 1px solid #d2d2d2;
-}
-
-.hide__todo__form {
-  display: none;
-  opacity: 0;
-}
-
-.show__todo__form {
   display: default;
   opacity: 1;
+}
+
+.toggle__form {
+  display: none;
+  opacity: 0;
 }
 
 .form__fields {
