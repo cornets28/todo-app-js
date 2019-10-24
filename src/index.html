@@ -63,7 +63,54 @@
           </ul>
         </aside>
         <aside class="container__right">
-          <h2 id="selected__project">Inbox</h2>
+          <div class="todo__form hide__todo__form">
+            <div class="form__close"><i class=" fas fa-window-close"></i></div>
+            <div class="form__fields">
+              <div class="form__group">
+                <input type="text" id="name" class="form__field" placeholder="ToDo name">
+                <label for="name" class="form__label">ToDo name</label>
+              </div>
+
+              <div class="form__group">
+                <textarea id="description" class="form__field" placeholder="ToDo description" rows="4"></textarea>
+                <label for="description" class="form__label">ToDo description</label>
+              </div>
+
+              <div class="form__group">
+                <input type="date" id="date" class="form__field" placeholder="ToDo name">
+                <label for="date" class="form__label">ToDo name</label>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label">Select Priority</label>
+                <div class="cntr">
+                  <label for="opt1" class="radio">
+                    <input type="radio" name="rdo" id="opt1" class="hidden" />
+                    <span class="label"></span>High
+                  </label>
+
+                  <label for="opt2" class="radio">
+                    <input type="radio" name="rdo" id="opt2" class="hidden" />
+                    <span class="label"></span>Medium
+                  </label>
+
+                  <label for="opt3" class="radio">
+                    <input type="radio" name="rdo" id="opt3" class="hidden" />
+                    <span class="label"></span>Low
+                  </label>
+
+                </div>
+              </div>
+
+              <button class="form__submit">Submit</button>
+
+            </div>
+          </div>
+
+          <div class="todos__header">
+            <h2 id="selected__project">Inbox</h2>
+            <div class="add__todo"><i class="fas fa-plus-square"></i></div>
+          </div>
           <ul id="todo__list">
 
             <li id="todo-1" class="todo__item">
@@ -78,10 +125,12 @@
                 <div class="todo__content">
                   <p class="content__date">12.08.2019</p>
                   <h3 class="content__title">Buy gift for John's birthday</h3>
-                  <p class="content__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos
+                  <p class="content__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Dignissimos
                     consequatur blanditiis
                     excepturi
-                    assumenda deleniti, aperiam doloremque debitis ab itaque incidunt officiis pariatur dolorem, neque,
+                    assumenda deleniti, aperiam doloremque debitis ab itaque incidunt officiis pariatur dolorem,
+                    neque,
                     minimaqui consectetur sunt voluptates molestiae?</p>
                 </div>
               </div>
