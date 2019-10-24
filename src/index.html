@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+OCTYPE html>
 <html lang="en">
 
   <head>
@@ -42,7 +42,24 @@
       </nav>
       <div class="container">
         <aside class="container__left">
-          <h2>Projects</h2>
+
+            <div class="project__form">
+                <div class="form__close"><i class=" fas fa-window-close"></i></div>
+                  <div class="form__fields">
+                    <div class="form__group">
+                      <input type="text" id="name" class="form__field" placeholder="Project name">
+                      <label for="name" class="form__label">Project name</label>
+                  </div>
+                </div>
+    
+                <button class="form__submit">Submit</button>
+            </div>
+
+            <div class="todos__header">
+                <h2 id="selected__project">Projects</h2>
+                <div class="add__project"><i class="fas fa-plus-square"></i></div>
+              </div>
+          
           <ul id="projects">
             <li id="project-1" class="project__item project__item--selected">
               <i class="fas fa-home"></i>
