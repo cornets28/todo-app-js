@@ -375,6 +375,7 @@ body {
 
 .todo__delete {
   background-color: rgb(233, 13, 13);
+}
 
 .todo__item:hover .todo__icon {
   display: block;
@@ -400,31 +401,36 @@ body {
 }
 
 /* TODO FORM */
-.todo__form, .project_form {
+.todo__form {
   display: flex;
   flex-direction: column;
   position: absolute;
+  height: 29rem;
+  right: 2.5rem;
+  top: 12px;
   
   width: 30rem;
-  /* height: 29rem;// */
+  height: 29rem;
   background-color: white;
   z-index: 100;
   border-radius: 10px;
   border: 1px solid #d2d2d2;
 }
 
-.todo__form {
-   height: 29rem;
-   right: 2.5rem;
-   top: 12px;
-}
-
 .project__form {
-   height: 29rem;
-   right: 2.5rem;
-   stop: 12px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 29rem;
+  right: 2.5rem;
+  top: 12px;
+  width: 30rem;
+  height: 14rem;
+  background-color: white;
+  z-index: 100;
+  border-radius: 10px;
+  border: 1px solid #d2d2d2;
 }
-
 .hide__todo__form {
   display: none;
   opacity: 0;
