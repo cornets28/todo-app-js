@@ -174,8 +174,6 @@ body {
   align-items: center;
   color: white;
   font-size: 1rem;
-  border-top-right-radius: 10px;
-  border-bottom-left-radius: 10px;
   display: none;
 }
 
@@ -190,7 +188,7 @@ body {
   border-bottom-left-radius: 0;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Roboto);
+
 
 * {
   margin: 0;
