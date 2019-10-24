@@ -1,4 +1,4 @@
-OCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -11,28 +11,6 @@ OCTYPE html>
   </head>
 
   <body>
-    <!-- <header> Todoz</header>
-
-     <div class="sidebar">Projects</div>
-
-     <div class="add-project">
-       <form name="addProject" class="form-group">
-         <input type="text" placeholder="Project Name">
-       </form>
-     </div>
-
-     <div class="rigtt-section">TODOS</div>
-     <div class="add todos">
-        <form name="addTodos" class="form-group">
-          <input type="text" id="todo-title" name="title" class="form-control" placeholder="Title">
-          <input type="date" id="todo-date"name="due-date"class="form-control" placeholder="Due Date">
-          <textarea row="6" id="todo-description" name="description" class="form-control" placeholder="Description">
-          <input type="text"id="todo-priority" name="priority" class="form-control" placeholder="">
-        </form>
-      </div> -->
-
-
-
     <main class="main">
       <nav class="nav">
         <div class="nav__brand">
@@ -43,23 +21,23 @@ OCTYPE html>
       <div class="container">
         <aside class="container__left">
 
-            <div class="project__form hide__todo__form">
-                <div class="form__close"><i class=" fas fa-window-close"></i></div>
-                  <div class="form__fields">
-                    <div class="form__group">
-                      <input type="text" id="name" class="form__field" placeholder="Project name">
-                      <label for="name" class="form__label">Project name</label>
-                  </div>
-                </div>
-    
-                <button class="form__submit">Submit</button>
+          <div class="project__form show__project__form">
+            <div class="form__close"><i class=" fas fa-window-close"></i></div>
+            <div class="form__fields">
+              <div class="form__group">
+                <input type="text" id="name" class="form__field" placeholder="Project name">
+                <label for="name" class="form__label">Project name</label>
+              </div>
             </div>
 
-            <div class="todos__header">
-                <h2 id="selected__project">Projects</h2>
-                <div class="add__project"><i class="fas fa-plus-square"></i></div>
-              </div>
-          
+            <button class="project__submit">Submit</button>
+          </div>
+
+          <div class="todos__header">
+            <h2 id="selected__project">Projects</h2>
+            <div class="add__project"><i class="fas fa-plus-square"></i></div>
+          </div>
+
           <ul id="projects">
             <li id="project-1" class="project__item project__item--selected">
               <i class="fas fa-home"></i>
