@@ -6,6 +6,8 @@ export const elements = {
   submitProjectBtn: document.getElementById('submit__project__btn'),
   projectList: document.getElementById('project__list'),
 
+  todoList: document.getElementById('todo__list'),
+  selectedProjectTitle: document.getElementById('selected__project'),
   addTodoBtn: document.getElementById('add__todo__btn'),
   todoForm: document.getElementById('todo__form'),
   closeTodoBtn: document.getElementById('close__todo__form'),
@@ -13,9 +15,6 @@ export const elements = {
   todoInputDate: document.getElementById('todo__date'),
   todoInputDescription: document.getElementById('todo__description'),
   todoSubmitBtn: document.getElementById('form__submit__btn'),
-  // todoRadioHigh: document.getElementById('todo__high'),
-  // todoRadioBtnMedium: document.getElementById('todo__medium__priority'),
-  // todoRadioBtnLow: document.getElementById('todo__low__priority'),
 };
 
 export const toggleForm = 'toggle__form';

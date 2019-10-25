@@ -51,6 +51,11 @@ elements.projectList.addEventListener('click', e => {
   projectView.highlightSelected(id);
   // 3. Add it to our state
   state.selected = id;
+  // 4. Change selected title
+  const project = state.projects.find(val => val.id === state.selected);
+  todoView.changeProjectTitle(project.name);
+  // 5. Render Todos
+  todoView.renderTodos(project.todos);
 });
 
 const todoController = () => {
@@ -61,7 +66,13 @@ const todoController = () => {
 
   // 3. Check if all values exist
   if (title && description && dueDate && priority) {
+    // 4. Create a todo
     const todo = new Todo(title, description, dueDate, priority);
+    //5. Update the state
+    const project = state.projects.find(val => val.id === state.selected);
+    project.todos.push(todo);
+    //6. Update the added todo in UI
+    todoView.addTodoToList(todo);
   } else {
     alert('Please enter all the values');
   }
