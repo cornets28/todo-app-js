@@ -86,17 +86,34 @@ const todoController = () => {
   todoView.toggleTodoForm();
   // 2. Get values
   const { title, description, dueDate, priority } = todoView.getAllInputValues();
+  console.log(title, description, dueDate, priority);
 
   // 3. Check if all values exist
   if (title && description && dueDate && priority) {
-    // 4. Create a todo
-    const todo = new Todo(title, description, dueDate, priority);
-    //5. Update the state
-    const project = state.projects.find(val => val.id === state.selected);
-    project.todos.push(todo);
-    localStorage.setItem('state', JSON.stringify(state));
-    //6. Update the added todo in UI
-    todoView.addTodoToList(todo);
+    if (state.editing) {
+      // 4. Find the todo
+      const project = state.projects.find(val => val.id === state.selected);
+      const todo = project.todos.find(el => el.id === state.editing);
+      // 5. update todo
+      todo.title = title;
+      todo.description = description;
+      todo.dueDate = dueDate;
+      todo.priority = priority;
+      //6. update state
+      state.editing = null;
+      localStorage.setItem('state', JSON.stringify(state));
+      //7. render todos
+      todoView.renderTodos(project.todos);
+    } else {
+      // 4. Create a todo
+      const todo = new Todo(title, description, dueDate, priority);
+      //5. Update the state
+      const project = state.projects.find(val => val.id === state.selected);
+      project.todos.push(todo);
+      localStorage.setItem('state', JSON.stringify(state));
+      //6. Update the added todo in UI
+      todoView.addTodoToList(todo);
+    }
   } else {
     alert('Please enter all the values');
   }
@@ -112,20 +129,35 @@ elements.addTodoBtn.addEventListener('click', () => {
 
 elements.todoSubmitBtn.addEventListener('click', () => {
   todoController();
+  todoView.clearAllinputValues();
 });
+
+const deleteTodo = id => {
+  const project = state.projects.find(val => val.id === state.selected);
+  const filteredTodos = project.todos.filter(todo => todo.id !== id);
+  project.todos = filteredTodos;
+  localStorage.setItem('state', JSON.stringify(state));
+  todoView.renderTodos(project.todos);
+};
+
+const editTodo = id => {
+  // 1. Find the todo
+  const project = state.projects.find(val => val.id === state.selected);
+  const todo = project.todos.find(el => el.id === id);
+  // 2. Toggle todoform
+  todoView.toggleTodoForm();
+  todoView.editTodo(todo);
+  //3. Add edit item to state
+  state.editing = todo.id;
+};
 
 elements.todoList.addEventListener('click', e => {
   const id = todoView.getSelectedTodoID(e);
   if (id) {
-    // Check if delete or edit was pressed
     if (e.target.closest('.todo__edit')) {
-      alert('Edit button was tapped');
+      editTodo(id);
     } else if (e.target.closest('.todo__delete')) {
-      const project = state.projects.find(val => val.id === state.selected);
-      const filteredTodos = project.todos.filter(todo => todo.id !== id);
-      project.todos = filteredTodos;
-      localStorage.setItem('state', JSON.stringify(state));
-      todoView.renderTodos(project.todos);
+      deleteTodo(id);
     }
   }
 });
