@@ -11,10 +11,11 @@ export const elements = {
   closeTodoBtn: document.getElementById('close__todo__form'),
   todoInputName: document.getElementById('todo__name'),
   todoInputDate: document.getElementById('todo__date'),
-  todoInputDescription: document.getElementById('todo__description__priority'),
-  todoRadioHigh: document.getElementById('todo__high'),
-  todoRadioBtnMedium: document.getElementById('todo__medium__priority'),
-  todoRadioBtnLow: document.getElementById('todo__low__priority'),
+  todoInputDescription: document.getElementById('todo__description'),
+  todoSubmitBtn: document.getElementById('form__submit__btn'),
+  // todoRadioHigh: document.getElementById('todo__high'),
+  // todoRadioBtnMedium: document.getElementById('todo__medium__priority'),
+  // todoRadioBtnLow: document.getElementById('todo__low__priority'),
 };
 
 export const toggleForm = 'toggle__form';

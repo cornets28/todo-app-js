@@ -3,7 +3,7 @@ import uuid from 'uuid/v4';
 
 export default class Project {
   constructor(name) {
-    this.id = uuid();
+    this.id = `project-${uuid()}`;
     this.name = name;
     this.icon = this.getRandomIcon();
     this.todos = [];

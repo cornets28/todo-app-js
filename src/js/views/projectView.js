@@ -1,4 +1,4 @@
-import { elements, toggleForm } from './elements';
+import { elements, toggleForm, toggleProjectSelection } from './elements';
 
 export const getInputValue = () => {
   return elements.projectInput.value;
@@ -19,6 +19,19 @@ export const clearProjectForm = () => {
 
 export const toggleProjectForm = () => {
   elements.projectForm.classList.toggle(toggleForm);
+};
+
+export const getSelectedProjectID = e => {
+  if (e.target.closest("[id^='project']")) {
+    return e.target.closest("[id^='project']").id;
+  }
+};
+
+export const highlightSelected = id => {
+  document
+    .querySelectorAll("[id^='project']")
+    .forEach(el => el.classList.remove(toggleProjectSelection));
+  document.getElementById(id).classList.add(toggleProjectSelection);
 };
 
 elements.addProjectBtn.addEventListener('click', () => {
