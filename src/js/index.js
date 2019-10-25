@@ -29,7 +29,6 @@ const projectController = () => {
     state.projects.push(project);
     // 5. Update the project list UI
     projectView.addProjectToView(project);
-
     // 6. Clear input
     projectView.clearProjectForm();
   } else {
