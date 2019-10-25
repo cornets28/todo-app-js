@@ -9,8 +9,8 @@
 
 - User can create their own projects and add todo lists
 
-- The codind section of this project  can be found [here](https://github.com/KaushikShivam/todo-app-js/)
-- The live demo of this project can found [here](https://github.com/KaushikShivam/todo-app-js/))
+- The codind section of this project can be found [here](https://github.com/KaushikShivam/todo-app-js/)
+- The live demo of this project can found [here](https://raw.githack.com/CornetS28/todo-app-js/todo-list-features/dist/index.html))
 
 ## Authors
 
