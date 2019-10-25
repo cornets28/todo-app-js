@@ -64,6 +64,12 @@ export const changeProjectTitle = title => {
   elements.selectedProjectTitle.textContent = title;
 };
 
+export const getSelectedTodoID = e => {
+    if (e.target.closest("[id^='todo']")) {
+      return e.target.closest("[id^='todo']").id;
+    }
+};
+
 elements.closeTodoBtn.addEventListener('click', () => {
   toggleTodoForm();
 });
