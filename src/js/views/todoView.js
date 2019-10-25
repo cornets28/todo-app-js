@@ -14,6 +14,26 @@ export const getAllInputValues = () => {
   };
 };
 
+export const clearAllinputValues = () => {
+  document.querySelectorAll('input[name = rdo]').forEach(el => {
+    el.checked = false;
+  });
+  elements.todoInputName.value = '';
+  elements.todoInputDescription.value = '';
+  elements.todoInputDate.value = '';
+};
+
+export const editTodo = todo => {
+  elements.todoInputName.value = todo.title;
+  elements.todoInputDescription.value = todo.description;
+  elements.todoInputDate.value = todo.dueDate;
+  document.querySelectorAll('input[name = rdo]').forEach(el => {
+    if (el.value === todo.priority) {
+      el.checked = true;
+    }
+  });
+};
+
 export const addTodoToList = todo => {
   const todoItem = `
   <li id=${todo.id} class="todo__item">
@@ -65,11 +85,12 @@ export const changeProjectTitle = title => {
 };
 
 export const getSelectedTodoID = e => {
-    if (e.target.closest("[id^='todo']")) {
-      return e.target.closest("[id^='todo']").id;
-    }
+  if (e.target.closest("[id^='todo']")) {
+    return e.target.closest("[id^='todo']").id;
+  }
 };
 
 elements.closeTodoBtn.addEventListener('click', () => {
+  clearAllinputValues();
   toggleTodoForm();
 });
