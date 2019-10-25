@@ -102,5 +102,5 @@ elements.todoList.addEventListener('click', (e) => {
   const id = todoView.getSelectedTodoID(e);
   const project = state.projects.find(val => val.id === state.selected);
   const todo = project.todos.find(val => val.id === id); 
-  alert(`${todo}`)
-})
+  // alert(`${todo}`)
+})//////////
