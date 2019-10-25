@@ -38,7 +38,6 @@ body {
 /* todo container styles */
 .main {
   width: 80vw;
-  /* height: 80vh; */
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   position: absolute;

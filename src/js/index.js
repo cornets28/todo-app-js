@@ -86,7 +86,6 @@ const todoController = () => {
   todoView.toggleTodoForm();
   // 2. Get values
   const { title, description, dueDate, priority } = todoView.getAllInputValues();
-  console.log(title, description, dueDate, priority);
 
   // 3. Check if all values exist
   if (title && description && dueDate && priority) {
