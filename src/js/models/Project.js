@@ -10,7 +10,20 @@ export default class Project {
   }
 
   getRandomIcon() {
-    const icons = ['fa-home', 'fa-asterisk', 'fa-cloud', 'fa-cut'];
+    const icons = [
+      'fa-accusoft',
+      'fa-ad',
+      'fa-address-book',
+      'fa-address-card',
+      'fa-adjust',
+      'fa-adobe',
+      'fa-adversal',
+      'fa-affiliatetheme',
+      'fa-air-freshener',
+      'fa-algolia',
+      'fa-anchor',
+      'fa-archive',
+      'fa-archway'];
     const random = Math.round(Math.random() * icons.length) + 1;
     return icons[random];
   }
