@@ -8,6 +8,13 @@ export const elements = {
 
   addTodoBtn: document.getElementById('add__todo__btn'),
   todoForm: document.getElementById('todo__form'),
+  closeTodoBtn: document.getElementById('close__todo__form'),
+  todoInputName: document.getElementById('todo__name'),
+  todoInputDate: document.getElementById('todo__date'),
+  todoInputDescription: document.getElementById('todo__description__priority'),
+  todoRadioHigh: document.getElementById('todo__high'),
+  todoRadioBtnMedium: document.getElementById('todo__medium__priority'),
+  todoRadioBtnLow: document.getElementById('todo__low__priority'),
 };
 
 export const toggleForm = 'toggle__form';

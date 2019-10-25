@@ -59,20 +59,20 @@
         </aside>
         <aside class="container__right">
           <div id="todo__form" class="todo__form toggle__form">
-            <div class="form__close"><i class=" fas fa-window-close"></i></div>
+            <div id="close__todo__form" class="form__close"><i class=" fas fa-window-close"></i></div>
             <div class="form__fields">
               <div class="form__group">
-                <input type="text" id="name" class="form__field" placeholder="ToDo name">
+                <input type="text" id="todo__name" class="form__field" placeholder="ToDo name">
                 <label for="name" class="form__label">ToDo name</label>
               </div>
 
               <div class="form__group">
-                <textarea id="description" class="form__field" placeholder="ToDo description" rows="4"></textarea>
+                <textarea id="todo__description" class="form__field" placeholder="ToDo description" rows="4"></textarea>
                 <label for="description" class="form__label">ToDo description</label>
               </div>
 
               <div class="form__group">
-                <input type="date" id="date" class="form__field" placeholder="ToDo name">
+                <input type="date" id="todo__date" class="form__field" placeholder="ToDo name">
                 <label for="date" class="form__label">ToDo name</label>
               </div>
 
@@ -80,17 +80,17 @@
                 <label class="form__label">Select Priority</label>
                 <div class="cntr">
                   <label for="opt1" class="radio">
-                    <input type="radio" name="rdo" id="opt1" class="hidden" />
+                    <input type="radio" name="rdo" id="todo__high__priority" class="hidden" />
                     <span class="label"></span>High
                   </label>
 
                   <label for="opt2" class="radio">
-                    <input type="radio" name="rdo" id="opt2" class="hidden" />
+                    <input type="radio" name="rdo" id="todo__medium__priority" class="hidden" />
                     <span class="label"></span>Medium
                   </label>
 
                   <label for="opt3" class="radio">
-                    <input type="radio" name="rdo" id="opt3" class="hidden" />
+                    <input type="radio" name="rdo" id="todo__low__priority" class="hidden" />
                     <span class="label"></span>Low
                   </label>
 
