@@ -114,12 +114,18 @@ elements.todoSubmitBtn.addEventListener('click', () => {
   todoController();
 });
 
-// elements.todoList.addEventListener('click', e => {
-//   const id = todoView.getSelectedTodoID(e);
-//   if (id) {
-//     const project = state.projects.find(val => val.id === state.selected);
-//     const filteredTodos = project.todos.filter(todo => todo.id !== id);
-//     project.todos = filteredTodos;
-//     todoView.renderTodos(project.todos);
-//   }
-// });
+elements.todoList.addEventListener('click', e => {
+  const id = todoView.getSelectedTodoID(e);
+  if (id) {
+    // Check if delete or edit was pressed
+    if (e.target.closest('.todo__edit')) {
+      alert('Edit button was tapped');
+    } else if (e.target.closest('.todo__delete')) {
+      const project = state.projects.find(val => val.id === state.selected);
+      const filteredTodos = project.todos.filter(todo => todo.id !== id);
+      project.todos = filteredTodos;
+      localStorage.setItem('state', JSON.stringify(state));
+      todoView.renderTodos(project.todos);
+    }
+  }
+});
