@@ -34,6 +34,18 @@ export const highlightSelected = id => {
   document.getElementById(id).classList.add(toggleProjectSelection);
 };
 
+export const renderProjects = projects => {
+  let projectItems = '';
+  projects.forEach(project => {
+    projectItems += `
+    <li id=${project.id} class="project__item">
+      <i class="fas ${project.icon}"></i>
+      <p>${project.name}</p>
+    </li>`;
+  });
+  elements.projectList.insertAdjacentHTML('beforeend', projectItems);
+};
+
 elements.addProjectBtn.addEventListener('click', () => {
   toggleProjectForm();
 });

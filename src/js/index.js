@@ -8,11 +8,32 @@ import * as todoView from './views/todoView';
  * Global State
  * - Contains Projects
  */
-const state = {
-  projects: [],
-  todos: [],
-  selected: undefined,
+let state = {};
+
+const setupState = () => {
+  if (localStorage.getItem('state')) {
+    state = JSON.parse(localStorage.getItem('state'));
+  } else {
+    const defaultProject = new Project('Default');
+    state = {
+      projects: [],
+      todos: [],
+      selected: defaultProject.id,
+    };
+    state.projects.push(defaultProject);
+  }
 };
+
+const setupView = () => {
+  projectView.renderProjects(state.projects, state.selected);
+  projectView.highlightSelected(state.selected);
+  const project = state.projects.find(val => val.id === state.selected);
+  todoView.renderTodos(project.todos);
+  todoView.changeProjectTitle(project.name);
+};
+
+setupState();
+setupView();
 
 /*
  * PROJECT CONTROLLER
@@ -31,6 +52,7 @@ const projectController = () => {
     const project = new Project(value);
     // 4. Update the state
     state.projects.push(project);
+    localStorage.setItem('state', JSON.stringify(state));
     // 5. Update the project list UI
     projectView.addProjectToView(project);
     // 6. Clear input
@@ -51,6 +73,7 @@ elements.projectList.addEventListener('click', e => {
   projectView.highlightSelected(id);
   // 3. Add it to our state
   state.selected = id;
+  localStorage.setItem('state', JSON.stringify(state));
   // 4. Change selected title
   const project = state.projects.find(val => val.id === state.selected);
   todoView.changeProjectTitle(project.name);
@@ -71,6 +94,7 @@ const todoController = () => {
     //5. Update the state
     const project = state.projects.find(val => val.id === state.selected);
     project.todos.push(todo);
+    localStorage.setItem('state', JSON.stringify(state));
     //6. Update the added todo in UI
     todoView.addTodoToList(todo);
   } else {
@@ -90,11 +114,12 @@ elements.todoSubmitBtn.addEventListener('click', () => {
   todoController();
 });
 
-elements.todoList.addEventListener('click', (e) => {
-  const id = todoView.getSelectedTodoID(e)
-  const project = state.projects.find(val => val.id === state.selected);
-  const filteredTodos = project.todos.filter((todo) => todo.id !== id);
-  project.todos = filteredTodos;
-  todoView.renderTodos(project.todos); 
-})
-
+// elements.todoList.addEventListener('click', e => {
+//   const id = todoView.getSelectedTodoID(e);
+//   if (id) {
+//     const project = state.projects.find(val => val.id === state.selected);
+//     const filteredTodos = project.todos.filter(todo => todo.id !== id);
+//     project.todos = filteredTodos;
+//     todoView.renderTodos(project.todos);
+//   }
+// });
