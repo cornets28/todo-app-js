@@ -90,11 +90,17 @@ elements.todoSubmitBtn.addEventListener('click', () => {
   todoController();
 });
 
-elements.todoList.addEventListener('click', (e) => {
-  const id = todoView.getSelectedTodoID(e)
+elements.todoList.addEventListener('click', (e) => { 
+  const id = todoView.getSelectedTodoID(e);
   const project = state.projects.find(val => val.id === state.selected);
   const filteredTodos = project.todos.filter((todo) => todo.id !== id);
   project.todos = filteredTodos;
   todoView.renderTodos(project.todos); 
 })
 
+elements.todoList.addEventListener('click', (e) => {
+  const id = todoView.getSelectedTodoID(e);
+  const project = state.projects.find(val => val.id === state.selected);
+  const todo = project.todos.find(val => val.id === id); 
+  alert(`${todo}`)
+})
